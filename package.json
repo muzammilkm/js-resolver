@@ -1,0 +1,38 @@
+{
+  "name": "js-resolver",
+  "version": "1.0.0",
+  "description": "A light weight Inversion of Control(IOC) container.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/muzammilkm/js-resolver.git"
+  },
+  "keywords": [
+    "javascript",
+    "plugin",
+    "resolver",
+    "dependency",
+    "ioc",
+    "inversion",
+    "control",
+    "inversion of control",
+    "dependency injection"
+  ],
+  "author": "Muzammil Khaja Mohmmaed",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/muzammilkm/js-resolver/issues"
+  },
+  "homepage": "https://github.com/muzammilkm/js-resolver#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "gulp-jshint": "^2.0.4",
+    "gulp-uglify": "^3.0.0",
+    "jshint": "^2.9.5",
+    "mocha": "^4.0.1"
+  }
+}
