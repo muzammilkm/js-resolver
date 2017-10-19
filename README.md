@@ -25,11 +25,6 @@ Download the **js-resolver.js** file or **jq-resolver.min.js** (*recommended*) f
 $ bower install js-resolver
 ```
 
-### Nuget
-```
-PM> Install-Package js-resolver
-```
-
 ## Introduction
 A light weight plugin for Inversion of Control(IOC) container which can resolve an object or a class dynamically without polluting global scope. Adopating SOLID principle for seperation of concerns & single responsibility.
 
