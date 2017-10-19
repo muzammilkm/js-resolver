@@ -9,10 +9,6 @@ A light weight plugin for Inversion of Control(IOC) container which can resolve 
 4. Muliple files
 5. SOLID principle
 
-
-## Demo
-1. [Demo](https://muzammilkm.github.io/js-resolver/docs/index.html)
-
 ## Installation
 
 ### Manual Installation
