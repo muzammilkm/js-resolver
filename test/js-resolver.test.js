@@ -1,16 +1,16 @@
-var resolve = require('../src/js-resolver').$resolver;
+var resolver = require('../src/js-resolver').$resolver;
 var assert = require('chai').assert;
 
 
 describe('resolver', function() {
     it('ioc container should exists', function() {
-        assert.isFunction(resolve);
+        assert.isFunction(resolver);
     });
 
     it('ioc container should contain resolved number value', function() {
         var expected = 1;
-        resolve('data', expected);
-        var actual = resolve('data');
+        resolver('data', expected);
+        var actual = resolver('data');
         assert.equal(expected, actual);
         assert.isNumber(actual);
     });
@@ -18,10 +18,10 @@ describe('resolver', function() {
     it('ioc container should contain resolved string value', function() {
         // Arrange
         var expected = "1";
-        resolve('data', expected);
+        resolver('data', expected);
 
         // Act
-        var actual = resolve('data');
+        var actual = resolver('data');
 
         // Assert
         assert.equal(expected, actual);
@@ -34,10 +34,10 @@ describe('resolver', function() {
             firstName: 'Muzammil',
             lastName: 'Mohammed'
         };
-        resolve('person', expected);
+        resolver('person', expected);
 
         // Act
-        var actual = resolve('person');
+        var actual = resolver('person');
 
         // Assert
         assert.equal(expected, actual);
@@ -53,10 +53,10 @@ describe('resolver', function() {
             };
             return person;
         };
-        resolve('person', expected);
+        resolver('person', expected);
 
         // Act
-        var actual = resolve('person');
+        var actual = resolver('person');
 
         // Assert
         assert.equal(expected, actual);
@@ -74,11 +74,11 @@ describe('resolver', function() {
             },
             firstName = "Muzammil",
             lastName = "Mohammed";
-        resolve('person', expected);
+        resolver('person', expected);
 
 
         // Act
-        var actual = resolve('person');
+        var actual = resolver('person');
         var person = actual();
         person.firstName = "Muzammil";
         person.lastName = "Mohammed";
@@ -99,11 +99,11 @@ describe('resolver', function() {
             };
             return person;
         };
-        resolve('person', expected);
+        resolver('person', expected);
 
 
         // Act
-        var actual = resolve('person');
+        var actual = resolver('person');
         var person1 = actual();
         var person2 = actual();
 
