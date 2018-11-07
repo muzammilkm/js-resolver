@@ -1,6 +1,6 @@
 js-Resolver($resolver)
 ===================
-A light weight plugin for Inversion of Control(IOC) container which can resolve an object or a class dynamically without polluting global scope. Adopating SOLID principle for seperation of concerns & single responsibility.
+A light weight plugin for Inversion of Control(IOC) container for module pattern approch which can resolve an object or a class dynamically without polluting global scope. Adopating SOLID principle for seperation of concerns & single responsibility.
 
 ## Features
 1. Light weight
@@ -35,7 +35,7 @@ PM> Install-Package js-resolver
 ```
 
 ## Introduction
-A light weight plugin for Inversion of Control(IOC) container which can resolve an object or a class dynamically without polluting global scope. Adopating SOLID principle for seperation of concerns & single responsibility.
+A light weight plugin for Inversion of Control(IOC) container which can resolve objects or functions dynamically without polluting global scope. Adopating SOLID principle for seperation of concerns & single responsibility. This plugin is best used in Module pattern approch with IIFE & when you load multiple js files in browser.
 
 Basic Example
 ```javascript
