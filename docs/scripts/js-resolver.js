@@ -3,7 +3,7 @@
 
     var dependecies = {};
 
-    $resolver = function(name, dependecy) {
+    var $resolver = function(name, dependecy) {
         if (dependecy) {
             dependecies[name] = dependecy;
         } else {
