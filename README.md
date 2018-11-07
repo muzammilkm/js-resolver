@@ -9,6 +9,10 @@ A light weight plugin for Inversion of Control(IOC) container which can resolve 
 4. Muliple files
 5. SOLID principle
 
+
+## Demo
+1. [Demo](https://muzammilkm.github.io/js-resolver/docs/index.html)
+
 ## Installation
 
 ### Manual Installation
@@ -25,54 +29,81 @@ Download the **js-resolver.js** file or **jq-resolver.min.js** (*recommended*) f
 $ bower install js-resolver
 ```
 
+### Nuget
+```
+PM> Install-Package js-resolver
+```
+
 ## Introduction
-A light weight plugin for Inversion of Control(IOC) container which can resolve objects or functions dynamically without polluting global scope. Adopating SOLID principle for seperation of concerns & single responsibility. This plugin is best used in Module pattern approch with IIFE & when you load multiple js files in browser.
+A light weight plugin for Inversion of Control(IOC) container which can resolve an object or a class dynamically without polluting global scope. Adopating SOLID principle for seperation of concerns & single responsibility.
 
 Basic Example
 ```javascript
-(function (resolve) {
+(function (resolver) {
    var personModel = {},
        _data;
 
-   model.getFirstName = function() {
-		return _data.firstName;
+   personModel.getFirstName = function() {
+      return _data.firstName;
    };
 
-   model.getLastName = function() {
-		return _data.firstName;
+   personModel.getLastName = function() {
+      return _data.firstName;
    };
 
-   model.setData = function(data) {
-   		_data = data;
+   personModel.setData = function(data) {
+         _data = data;
    };
 
-   resolve('person', personModel);
+   resolver('person', personModel);
 
 }(window.$resolver));
 ```
 ##### Resolving model
 ```javascript
-(function (resolve) {
-   var person = resolve('person');
+(function (resolver) {
+   var person = resolver('person');
 
    person.setData({
-   		firstName: 'Muzammil',
-   		middleName: 'Khaja',
-   		lastName: 'Mohammed'
-   	});
+         firstName: 'Muzammil',
+         middleName: 'Khaja',
+         lastName: 'Mohammed'
+      });
 
-   	alert("your first name: " + person.getFirstName());
-   	alert("your last name: " +person.getLastName());
+      console.log("your first name: " + person.getFirstName());
+      console.log("your last name: " +person.getLastName());
 
 }(window.$resolver));
 ```
 
 ## Documentation
-Add module either object or function or value
+Add/Register either an object or a function or a value with $resolver to be resolved later
 ```javascript
-resolve('alias name', object or function or value);
+window.$resolver('alias name', object or function or value);
 ```
-To resolve the object or function or value via alias name
+To resolve an object or a function or a value via alias name
 ```javascript
-var expected = resolve('alias name');
+var expected = window.$resolver('alias name');
+```
+To check alias name is added/registered in $resolver.
+```javascript
+var expected = window.$resolver.has('alias name');
+```
+To remove an object or a function or a value from $resolver.
+```javascript
+var expected = window.$resolver.has('alias name');
+if(expected){
+   console.log('Exists');
+} else{
+   console.log('Does not Exists');
+}
+```
+Add/Register singleton/static object in $resolver.
+```javascript
+var expected = window.$resolver.service('alias name', {});
+```
+To extend singleton/static object in $resolver.
+```javascript
+var expected = window.$resolver.service('alias name');
+expected.extend(object or function or value);
 ```
